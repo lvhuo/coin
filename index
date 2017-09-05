@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+<p>
+	<input id="btn01" type=image src="https://www.tuchuang001.com/images/2017/09/05/start.jpg" width=50% style="display:block;"/>
+	<input id="btn02" type=image src="https://www.tuchuang001.com/images/2017/09/05/retry.jpg" width=50% style="display:none;"/>
+	<img id="bro01" src="https://www.tuchuang001.com/images/2017/09/05/11.jpg" width=100% style="display:none;" />
+	<img id="bro02" src="https://www.tuchuang001.com/images/2017/09/05/12.jpg" width=100% style="display:none;" />
+</p>
+
+<script type="text/javascript">
+	var btn=document.getElementById('btn01');
+	var btn=document.getElementById('btn02');
+	var pic=document.getElementById('bro01');
+	var pic=document.getElementById('bro02');
+
+btn01.onclick=function()
+{
+
+	if (Math.floor(Math.random()*10)%2==0)
+	{
+		bro01.style.display='block';
+	}
+	else
+	{
+		bro02.style.display='block';
+	}
+	btn01.style.display='none';
+	btn02.style.display='block';
+}
+btn02.onclick=function()
+{
+	bro01.style.display='none';
+	bro02.style.display='none';
+	btn01.style.display='block';
+	btn02.style.display='none';
+}
+</script>
+</body>
+</html>
