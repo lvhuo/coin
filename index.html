@@ -1,41 +1,17 @@
 <!DOCTYPE HTML>
 <html>
+<header>Coin</header>
+<body>
 
-<body bgcolor="#0a0a0a">
-
-<p style="text-align:center">
-	<input id="btn01" type=image src="http://wx3.sinaimg.cn/mw690/b09524fegy1fjjy1lcx6ej20b405k0t0.jpg" width=30% style="display:block;"/>
-	<input id="btn02" type=image src="http://wx2.sinaimg.cn/mw690/b09524fegy1fjjy1lt9v8j20b405k74i.jpg" width=30% style="display:none;"/>
-	<img id="bro01" src="http://wx1.sinaimg.cn/mw690/b09524fegy1fjjy1kgbn1j208t08tjsc.jpg" width=100% style="display:none;" />
-	<img id="bro02" src="http://wx3.sinaimg.cn/mw690/b09524fegy1fjjy1kwibfj208t08t3zp.jpg" width=100% style="display:none;" />
-</p>
+<button script="myCoin()">Destiny is on your hand</button>
+<p id="demo"></p>
 
 <script type="text/javascript">
-	var btn=document.getElementById('btn01');
-	var btn=document.getElementById('btn02');
-	var pic=document.getElementById('bro01');
-	var pic=document.getElementById('bro02');
-
-btn01.onclick=function()
+function myCoin()
 {
-
-	if (Math.floor(Math.random()*10)%2==0)
-	{
-		bro01.style.display='block';
-	}
-	else
-	{
-		bro02.style.display='block';
-	}
-	btn01.style.display='none';
-	btn02.style.display='block';
-}
-btn02.onclick=function()
-{
-	bro01.style.display='none';
-	bro02.style.display='none';
-	btn01.style.display='block';
-	btn02.style.display='none';
+    var a=Math.random()*10;
+    var b=Math.random()*10;
+    document.getElementById("demo")=(a+b)%2;
 }
 </script>
 </body>
