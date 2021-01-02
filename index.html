@@ -1,17 +1,17 @@
 <!DOCTYPE HTML>
 <html>
-<header>Coin</header>
+<head>
+<title>Coin</title>
+</head>
 <body>
-
-<button script="myCoin()">Destiny is on your hand</button>
+<button onclick="myCoin()">Destiny is on your hand</button>
 <p id="demo"></p>
-
 <script type="text/javascript">
 function myCoin()
 {
-    var a=Math.random()*10;
-    var b=Math.random()*10;
-    document.getElementById("demo")=(a+b)%2;
+    var a=Math.floor(Math.random()*9);
+    var b=Math.floor(Math.random()*9);
+    document.getElementById("demo").innerHTML=(a+b)%2;
 }
 </script>
 </body>
