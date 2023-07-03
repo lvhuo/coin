@@ -1,83 +1,21 @@
-<style>
-.btn{
-   width: 90px;
-   height: 30px; 
-   color: #fff; 
-   background: #000;
-   font-family:Noto Sans CJK SC DemiLight;
-   border-radius: 2px;
-   transition: all 0.3s ease;
-   cursor: pointer;
-   top: 1px;
-}
-
-.btn:hover{
-    background: transparent;
-    color: rgba(0, 0, 0, 1);
-	border-radius: 2px;
-	border-width: 1px;
-}
-
-.SearchBar {
-    height: 30px;
-    width: 250px;
-	border: none;
-}
-</style>
-<p style="font-family:Noto Sans CJK SC DemiLight;color:#666666">防伪码：</p><br/>
-<input type="text" name="FwCode" id="FwCode" class="SearchBar">
-<input type="button" name="btnQuery" id="btnQuery" class="btn" value="查询" onclick="fwcheck('FwCode','ReturnResult')">
-<div><br/>
-<p id="ReturnResult" style="font-family:Noto Sans CJK SC DemiLight;color:#666666"></p>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Coin</title>
+</head>
+<body>
+<div align="center">
+	<button onclick="myCoin()" style="font-size:38pt;">Destiny is on your hand</button>
+	<br/><br/>
+	<b id="demo" style="font-size:38pt;"></b>
 </div>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script>
-function fwcheck(obj, obj1) {
-    var $FwCode = document.getElementById(obj).value;
-	var RegNumber = /^[0-9]*[1-9][0-9]*$/;
-    var flag = false;
-    document.getElementById(obj1).innerHTML = "";
-
-	if ($FwCode.length == 0) {
-	document.getElementById(obj1).innerHTML ="防伪码不能为空";
-	document.getElementById(obj).focus();
-	return false;
-	}
-
-	else if ($FwCode.length < 16) {
-	document.getElementById(obj1).innerHTML ="防伪码长度不能少于16位";
-	document.getElementById(obj).focus();
-	return false;
-	}
-
-	else if ($FwCode.length > 16) {
-	document.getElementById(obj1).innerHTML ="防伪码长度不能大于16位";
-	document.getElementById(obj).focus();
-	return false;
-	}
-
-	else if (!RegNumber.test($FwCode)) {
-	document.getElementById(obj1).innerHTML ="您输入的防伪码不是数字";
-	document.getElementById(obj).focus();
-	return false;
-	}
-	
-	$.ajaxSetup({ scriptCharset: "gbk" , contentType: "application/json; charset=utf8"});
-	document.getElementById(obj1).innerHTML ="正在查询......";
-	$(this).attr("disabled", true);
-
-	var $strurl="" ;
-	$.getJSON(
-	"http://www.400-315.com/fwqueryjson.ashx?callback=?",
-	{ FwCode: $FwCode },
-
-	function(data) {
-	document.getElementById(obj1).innerHTML = data.QueryResult;
-	setTimeout(btnEnabled, 2000);
-	});
-
-	function btnEnabled() {
-	$(this).attr("disabled", false);
-	}
+<script type="text/javascript">
+function myCoin()
+{
+    var a=Math.floor(Math.random()*9);
+    var b=Math.floor(Math.random()*9);
+    document.getElementById("demo").innerHTML=(a+b)%2;
 }
 </script>
+</body>
+</html>
